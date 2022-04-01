@@ -2,8 +2,12 @@ const todoForm = document.querySelector('.todo-form');
 const todoInput = todoForm.querySelector('input');
 const todoList = document.querySelector('#todo-list');
 
-const todos = [];
+let toDos = [];
 let checkFlag = 0;
+
+function saveTodosInLocal() {
+  localStorage.setItem('todos', JSON.stringify(toDos));
+}
 
 function checkTodo(event) {
   if (checkFlag) {
@@ -32,14 +36,22 @@ function writeInput(value) {
 
 function handlesubmit(event) {
   event.preventDefault();
-  console.log(event);
   const newvalue = todoInput.value;
   todoInput.value = '';
   const value = {
     id: Date.now(),
     value: newvalue,
   };
+  toDos.push(value);
+  saveTodosInLocal();
   writeInput(newvalue);
 }
 
 todoForm.addEventListener('submit', handlesubmit);
+
+const savedTodos = localStorage.getItem('todos');
+if (savedTodos !== null) {
+  const parsedTodos = JSON.parse(savedTodos);
+  toDos = parsedTodos;
+  parsedTodos.forEach(writeInput);
+}
