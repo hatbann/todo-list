@@ -1,3 +1,64 @@
 #checkBtn {
   cursor: pointer;
 }
+
+body {
+  background-color: rgb(255, 251, 217);
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  color: rgb(151, 192, 255);
+}
+
+input {
+  text-align: center;
+  border: none;
+  font-size: 20px;
+  font-family: 'Nanum Pen Script', cursive;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.todo {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+}
+
+#todo-list {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  padding: 0;
+}
+
+li {
+  font-family: 'Nanum Pen Script', cursive;
+  display: flex;
+  list-style: none;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+li > #checkBtn {
+  padding-right: 7px;
+  font-size: 15px;
+}
+
+li > #dltBtn {
+  padding-left: 7px;
+  cursor: pointer;
+  font-size: 15px;
+}

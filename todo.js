@@ -19,32 +19,42 @@ function checkTodo(event) {
   }
 }
 
+function deleteTodo(event) {
+  const li = event.target.parentElement;
+  li.remove();
+  toDos = toDos.filter((todo) => todo.id !== parseInt(li.id));
+  console.log(toDos);
+  saveTodosInLocal();
+}
+
 function writeInput(value) {
   const list = document.createElement('li');
   const deleteBtn = document.createElement('span');
   const checkBtn = document.createElement('span');
-  list.innerText = value;
+  list.innerText = value.value;
   deleteBtn.innerText = '❌';
   checkBtn.innerText = '⚪';
   checkBtn.id = 'checkBtn';
   deleteBtn.id = 'dltBtn';
-  todoList.appendChild(checkBtn);
+  list.id = value.id;
   todoList.appendChild(list);
-  todoList.appendChild(deleteBtn);
+  list.insertBefore(checkBtn, list.firstChild);
+  list.appendChild(deleteBtn);
   checkBtn.addEventListener('click', checkTodo);
+  deleteBtn.addEventListener('click', deleteTodo);
 }
 
 function handlesubmit(event) {
   event.preventDefault();
-  const newvalue = todoInput.value;
+  const value = todoInput.value;
   todoInput.value = '';
-  const value = {
+  const newvalue = {
     id: Date.now(),
-    value: newvalue,
+    value: value,
   };
-  toDos.push(value);
-  saveTodosInLocal();
+  toDos.push(newvalue);
   writeInput(newvalue);
+  saveTodosInLocal();
 }
 
 todoForm.addEventListener('submit', handlesubmit);
