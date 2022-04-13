@@ -6,10 +6,34 @@ body {
   background-color: rgb(255, 251, 217);
 }
 
-h1 {
+#check_icon {
+  width: 20px;
+  margin-right: 10px;
+  filter: invert(22%) sepia(0%) saturate(2058%) hue-rotate(143deg)
+    brightness(94%) contrast(73%);
+}
+#todo_category {
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
-  color: rgb(151, 192, 255);
+  font-size: 24px;
+  color: #3f3f3f;
+  left: 134.91px;
+  top: 269.74px;
+  line-height: 29px;
+  width: 230px;
+  height: 45px;
+  background: #e3f8ff;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0px 20px;
+}
+
+#plus_icon {
+  font-size: 30px;
 }
 
 input {
