@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="todo.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="CSS/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,34 +13,169 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700&display=swap"
       rel="stylesheet"
-      <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <script
+      type="text/javascript"
+      src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
     <title>Todo-List</title>
   </head>
   <body>
-    <div class="todo">
-      <h1 id="todo_category">
-        <div>
-          <img
-            src="https://cdn-icons.flaticon.com/png/512/1055/premium/1055183.png?token=exp=1649858095~hmac=10d9c90549198c0f367a7e97fceb9207"
-            id="check_icon"
-          />
-          To-Do List
+    <header>
+      <div class="nav">
+        <form action="" class="search">
+          <input type="text" placeholder="search" class="hiddden" />
+          <button type="submit" id="search_btn">
+            <img src="./assets/search.png" alt="" />
+          </button>
+        </form>
+        <a href="#" id="fav"> <img src="./assets/rating.png" alt="" /> </a
+        ><a href="#" id="like">
+          <img src="./assets/heart.png" alt="" />
+        </a>
+        <button class="menubar">
+          <img src="assets/menu.png" alt="" />
+        </button>
+      </div>
+    </header>
+    <div class="Main_page">
+      <div class="left_side">
+        <div class="user_profile">
+          <div id="user_profile_img">
+            <img src="assets/user_profile.jfif" alt="" />
+          </div>
+          <div id="user_profile_content">
+            <h1>Hatban</h1>
+            <span>Be Brave!</span>
+          </div>
         </div>
-        <div id="plus_icon">+</div>
-      </h1>
-      <form action="" class="todo-form">
-        <input type="text" name="" id="todo-input" placeholder="Write Todo" />
-      </form>
-      <ul id="todo-list"></ul>
+        <div class="todo">
+          <h1 id="todo_category">
+            <div>
+              <img src="assets/check.png" id="check_icon" />
+              To-Do List
+            </div>
+            <div id="plus_icon">+</div>
+          </h1>
+          <form action="" class="todo-form">
+            <input
+              type="text"
+              name=""
+              id="todo-input"
+              placeholder="Write Todo"
+            />
+          </form>
+          <ul id="todo-list"></ul>
+        </div>
+      </div>
+      <div class="right_side">
+        <ul class="friends">
+          <li>
+            <img
+              class="friends_pic"
+              src="./assets/friends/profile1.jfif"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="friends_pic"
+              src="./assets/friends/profile2.jfif"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="friends_pic"
+              src="./assets/friends/profile3.jfif"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="friends_pic"
+              src="./assets/friends/profile4.jfif"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="friends_pic"
+              src="./assets/friends/profile5.jfif"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="friends_pic"
+              src="./assets/friends/profile6.jfif"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="friends_pic"
+              src="./assets/friends/profile7.jfif"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="friends_pic"
+              src="./assets/friends/profile8.jfif"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="friends_pic"
+              src="./assets/friends/profile9.jfif"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="friends_pic"
+              src="./assets/friends/profile1.jfif"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="friends_pic"
+              src="./assets/friends/profile11.jfif"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="friends_pic"
+              src="./assets/friends/profile12.png"
+              alt=""
+            />
+          </li>
+        </ul>
+        <div class="calender"></div>
+      </div>
     </div>
+    <script>
+      $('.friends').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+      });
+    </script>
     <script src="todo.js"></script>
   </body>
 </html>

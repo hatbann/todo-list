@@ -1,0 +1,66 @@
+@import 'todo_list.css';
+@import 'user_profile.css';
+@import 'nav.css';
+
+#checkBtn {
+  cursor: pointer;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(255, 251, 217);
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.friends {
+  position: relative;
+  width: 500px;
+  padding: 0;
+}
+.friends button {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.friends button.slick-prev {
+  left: 0;
+}
+.friends button.slick-next {
+  right: 0;
+}
+
+.slick-slide {
+  width: 50px;
+  padding: 0;
+}
+
+.slick-active {
+  width: 50px;
+  padding: 0;
+}
+.friends_pic {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}

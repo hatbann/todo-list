@@ -1,0 +1,25 @@
+.left_side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.user_profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#user_profile_img > img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+#user_profile_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
