@@ -1,6 +1,7 @@
 @import 'todo_list.css';
 @import 'user_profile.css';
 @import 'nav.css';
+@import 'calender.css';
 
 #checkBtn {
   cursor: pointer;
@@ -17,6 +18,7 @@ a {
 body {
   margin: 0;
   background-color: rgb(255, 251, 217);
+  font-family: 'Nunito', sans-serif;
 }
 
 button {
@@ -25,10 +27,18 @@ button {
   cursor: pointer;
 }
 
+#todolist_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
 header {
-  position: fixed;
-  top: 0;
-  right: 0;
+  display: block;
+  margin-bottom: 50px;
+  width: 1000px;
 }
 
 .friends {
@@ -44,7 +54,7 @@ header {
 }
 
 .friends button.slick-prev {
-  left: 0;
+  left: -100px;
 }
 .friends button.slick-next {
   right: 0;

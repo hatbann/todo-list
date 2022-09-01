@@ -1,16 +1,20 @@
 .nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 #fav > img {
-  width: 47px;
-  height: 44px;
+  width: 35px;
+  height: 35px;
+  opacity: 70%;
+  margin-right: 5px;
 }
 
 #like > img {
-  width: 37px;
-  height: 40px;
+  width: 30px;
+  height: 33px;
+  opacity: 70%;
 }
 
 .search {
@@ -19,9 +23,19 @@
   align-items: center;
 }
 
+.search_input {
+  padding: 5px;
+
+  font-weight: 600;
+  letter-spacing: 5px;
+  font-family: 'Nunito', sans-serif;
+  margin-right: 5px;
+}
+
 #search_btn > img {
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
+  opacity: 80%;
 }
 
 .menubar > img {

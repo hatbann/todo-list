@@ -25,6 +25,14 @@
       type="text/css"
       href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/todo_list.css" />
     <script
       type="text/javascript"
       src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
@@ -32,141 +40,144 @@
     <title>Todo-List</title>
   </head>
   <body>
-    <header>
-      <div class="nav">
-        <form action="" class="search">
-          <input type="text" placeholder="search" class="hiddden" />
-          <button type="submit" id="search_btn">
-            <img src="./assets/search.png" alt="" />
-          </button>
-        </form>
-        <a href="#" id="fav"> <img src="./assets/rating.png" alt="" /> </a
-        ><a href="#" id="like">
-          <img src="./assets/heart.png" alt="" />
-        </a>
-        <button class="menubar">
-          <img src="assets/menu.png" alt="" />
-        </button>
-      </div>
-    </header>
-    <div class="Main_page">
-      <div class="left_side">
-        <div class="user_profile">
-          <div id="user_profile_img">
-            <img src="assets/user_profile.jfif" alt="" />
-          </div>
-          <div id="user_profile_content">
-            <h1>Hatban</h1>
-            <span>Be Brave!</span>
-          </div>
-        </div>
-        <div class="todo">
-          <h1 id="todo_category">
-            <div>
-              <img src="assets/check.png" id="check_icon" />
-              To-Do List
-            </div>
-            <div id="plus_icon">+</div>
-          </h1>
-          <form action="" class="todo-form">
-            <input
-              type="text"
-              name=""
-              id="todo-input"
-              placeholder="Write Todo"
-            />
+    <div id="todolist_container">
+      <header>
+        <div class="nav">
+          <form action="" class="search">
+            <input type="text" placeholder="search" class="search_input" />
+            <button type="submit" id="search_btn">
+              <img src="./assets/search.png" alt="" />
+            </button>
           </form>
-          <ul id="todo-list"></ul>
+          <div>
+            <a href="#" id="fav"> <img src="./assets/rating.png" alt="" /> </a
+            ><a href="#" id="like">
+              <img src="./assets/heart.png" alt="" />
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="right_side">
-        <ul class="friends">
-          <li>
-            <img
-              class="friends_pic"
-              src="./assets/friends/profile1.jfif"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="friends_pic"
-              src="./assets/friends/profile2.jfif"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="friends_pic"
-              src="./assets/friends/profile3.jfif"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="friends_pic"
-              src="./assets/friends/profile4.jfif"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="friends_pic"
-              src="./assets/friends/profile5.jfif"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="friends_pic"
-              src="./assets/friends/profile6.jfif"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="friends_pic"
-              src="./assets/friends/profile7.jfif"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="friends_pic"
-              src="./assets/friends/profile8.jfif"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="friends_pic"
-              src="./assets/friends/profile9.jfif"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="friends_pic"
-              src="./assets/friends/profile1.jfif"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="friends_pic"
-              src="./assets/friends/profile11.jfif"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="friends_pic"
-              src="./assets/friends/profile12.png"
-              alt=""
-            />
-          </li>
-        </ul>
-        <div class="calender"></div>
+      </header>
+      <div class="main_page">
+        <div class="left_side">
+          <div class="user_profile">
+            <div id="user_profile_img">
+              <img src="assets/user_profile.jfif" alt="" />
+            </div>
+            <div id="user_profile_content">
+              <h3>Hatban</h3>
+              <span>Be Brave!</span>
+            </div>
+          </div>
+          <div class="todo">
+            <h1 id="todo_category">
+              <div>
+                <img src="assets/check.png" id="check_icon" />
+                To-Do List
+              </div>
+              <button id="plus_icon">+</button>
+            </h1>
+            <form action="" class="todo_form hidden">
+              <input
+                type="text"
+                name=""
+                id="todo_input"
+                class="todo-input"
+                placeholder="Write Todo"
+              />
+              <button class="todo_input_cancel">취소</button>
+            </form>
+            <ul id="todo_list"></ul>
+          </div>
+        </div>
+        <div class="right_side">
+          <ul class="friends">
+            <li>
+              <img
+                class="friends_pic"
+                src="./assets/friends/profile1.jfif"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="friends_pic"
+                src="./assets/friends/profile2.jfif"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="friends_pic"
+                src="./assets/friends/profile3.jfif"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="friends_pic"
+                src="./assets/friends/profile4.jfif"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="friends_pic"
+                src="./assets/friends/profile5.jfif"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="friends_pic"
+                src="./assets/friends/profile6.jfif"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="friends_pic"
+                src="./assets/friends/profile7.jfif"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="friends_pic"
+                src="./assets/friends/profile8.jfif"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="friends_pic"
+                src="./assets/friends/profile9.jfif"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="friends_pic"
+                src="./assets/friends/profile1.jfif"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="friends_pic"
+                src="./assets/friends/profile11.jfif"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="friends_pic"
+                src="./assets/friends/profile12.png"
+                alt=""
+              />
+            </li>
+          </ul>
+          <div class="calender"></div>
+        </div>
       </div>
     </div>
     <script>
