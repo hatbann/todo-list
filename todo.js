@@ -31,6 +31,7 @@ function App() {
     $('#todo_list').innerHTML = template;
   };
 
+  //추가 함수
   const addTodo = () => {
     const todo = $('.todo-input').value;
     this.todos.push(todo);
@@ -38,6 +39,25 @@ function App() {
     render();
     $('.todo-input').value = '';
   };
+
+  //삭제 함수
+  const deleteTodo = (e, todoId) => {
+    this.todos.splice(todoId, 1);
+    store.setTodoItem(this.todos);
+    render();
+    return;
+  };
+
+  //수정함수
+  const editTodo = (e, todoId) => {
+    const todo = this.todos[todoId];
+    const editedTodo = prompt('수정하시겠습니까?', todo);
+    if (editedTodo) this.todos[todoId] = editedTodo;
+    store.setTodoItem(this.todos);
+    render();
+  };
+
+  const changeProfileImg = () => {};
 
   $('.todo_form').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -53,26 +73,28 @@ function App() {
     }
   });
 
+  //삭제 및 수정
   $('#todo_list').addEventListener('click', (e) => {
     const todoId = e.target.closest('li').dataset.todoId;
-    if (e.target.classList.contains('todo_remove_btn')) {
-      this.todos.splice(todoId, 1);
-      store.setTodoItem(this.todos);
-      render();
-      return;
-    }
-
-    if (e.target.classList.contains('todo_edit_btn')) {
-      const todo = this.todos[todoId];
-      const editedTodo = prompt('수정하시겠습니까?', todo);
-      this.todos[todoId] = editedTodo;
-      store.setTodoItem(this.todos);
-      render();
-    }
+    if (e.target.classList.contains('todo_remove_btn')) deleteTodo(e, todoId);
+    if (e.target.classList.contains('todo_edit_btn')) editTodo(e, todoId);
   });
 
   $('.todo_input_cancel').addEventListener('click', (e) => {
     $('.todo_form').classList.add('hidden');
+  });
+
+  $('#user_img').addEventListener('click', (e) => {
+    $('#input_profile_img').click();
+    $('#input_profile_img').addEventListener('change', (e) => {
+      let file = e.target.files[0];
+
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = (e) => {
+        $('#user_img').src = `${e.target.result}`;
+      };
+    });
   });
 }
 
