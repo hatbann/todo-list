@@ -9,11 +9,19 @@ const store = {
   getTodoItem: () => {
     return JSON.parse(localStorage.getItem('todos'));
   },
+  setProfileImg: (img) => {
+    localStorage.setItem('profileImg', JSON.stringify(img));
+  },
+  getProfileImg: () => {
+    return JSON.parse(localStorage.getItem('profileImg'));
+  },
 };
 
 function App() {
   this.todos = [];
+  this.profileImg = 'assets/user_profile.jfif';
   this.init = () => {
+    if (store.getProfileImg) this.profileImg = store.getProfileImg();
     this.todos = store.getTodoItem();
     render();
   };
@@ -29,6 +37,7 @@ function App() {
       })
       .join('');
     $('#todo_list').innerHTML = template;
+    $('#user_img').src = `${this.profileImg}`;
   };
 
   //추가 함수
@@ -56,8 +65,6 @@ function App() {
     store.setTodoItem(this.todos);
     render();
   };
-
-  const changeProfileImg = () => {};
 
   $('.todo_form').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -93,6 +100,7 @@ function App() {
       reader.readAsDataURL(file);
       reader.onloadend = (e) => {
         $('#user_img').src = `${e.target.result}`;
+        store.setProfileImg(`${e.target.result}`);
       };
     });
   });
