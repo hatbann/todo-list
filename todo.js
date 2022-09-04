@@ -21,8 +21,13 @@ function App() {
   this.todos = [];
   this.profileImg = 'assets/user_profile.jfif';
   this.init = () => {
-    if (store.getProfileImg) this.profileImg = store.getProfileImg();
-    this.todos = store.getTodoItem();
+    if (store.getProfileImg() !== null) {
+      this.profileImg = store.getProfileImg();
+    }
+    if (store.getTodoItem()) {
+      this.todos = store.getTodoItem();
+    }
+
     render();
   };
 
@@ -36,6 +41,7 @@ function App() {
       `;
       })
       .join('');
+
     $('#todo_list').innerHTML = template;
     $('#user_img').src = `${this.profileImg}`;
   };
