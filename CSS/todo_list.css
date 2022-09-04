@@ -93,5 +93,13 @@ li {
 .todo_form {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: cente;
+}
+
+.todo_check_btn {
+  cursor: pointer;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 10px;
 }
