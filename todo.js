@@ -68,9 +68,9 @@ function App() {
 
   //수정함수
   const editTodo = (e, todoId) => {
-    const todo = this.todos[todoId];
+    const todo = this.todos[todoId].todo;
     const editedTodo = prompt('수정하시겠습니까?', todo);
-    if (editedTodo) this.todos[todoId] = editedTodo;
+    if (editedTodo) this.todos[todoId].todo = editedTodo;
     store.setTodoItem(this.todos);
     render();
   };
