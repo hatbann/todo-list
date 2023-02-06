@@ -1,19 +1,32 @@
 # todo-list
+간단한 투두리스트
+<br>
 
-### make simple todo-list
-<div>
-  <strong style="font-size: 150%">💡Language💡
-  <br/>
-<img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/>
-</div>
-   <br/>
- <div>
-  <strong style="font-size: 150%">🔨Tool🔨
-  <br/>
-<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>&nbsp;
-<img src="https://img.shields.io/badge/Visaul Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/>&nbsp;
-</div>
-  
-<div>
-<img  width="70%" src="https://user-images.githubusercontent.com/86299528/188295422-0d9db9dc-ca7d-40e5-96a5-b7efb7754324.gif"/></div>
+
+# 📄 프로젝트 소개
+할 일을 적을 수 있는 간단한 투두리스트 사이트입니다
+
+
+<br>
+
+# ⌛ 제작 기간
+2022년 12월 31일
+<br>
+
+# ⚙ 사용 기술 및 라이브러리
+- `HTML / CSS`
+- `Javascript`
+
+<br>
+
+# 🛠 주요기능
+1. Todo 추가
+- `+` 버튼을 누르고 내용을 적으면 todo를 추가할 수 있다
+2. Todo 삭제 및 수정
+- edit버튼을 누르고 수정내용을 적은 후 엔터를 누르면 해당 내용이 바뀐다
+3. Todo 체크
+- Todo를 실천한 후 빈 원을 누르면 초록으로 변해 체크할 수 있다
+
+
+
 
