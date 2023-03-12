@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+label{
+    display:inline-block;
+    width: 50px;
+}
+
+input{
+    background-color: transparent;
+    border-bottom: 1px solid rgb(53, 53, 53);
+    width: 150px;
+    font-size: 15px;
+}
+
+.editForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.editForm div:last-child{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editForm div:last-child button{
+  width: 70px;
+}

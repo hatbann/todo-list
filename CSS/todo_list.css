@@ -3,6 +3,7 @@
   margin-right: 10px;
   filter: invert(22%) sepia(0%) saturate(2058%) hue-rotate(143deg)
     brightness(94%) contrast(73%);
+  
 }
 #todo_category {
   font-family: 'Nunito', sans-serif;

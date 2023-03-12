@@ -15,20 +15,43 @@ const store = {
   getProfileImg: () => {
     return JSON.parse(localStorage.getItem('profileImg'));
   },
+  setUserName : (username) =>{
+    localStorage.setItem('username', JSON.stringify(username));
+  },
+  getUserName : ()=>{
+    return JSON.parse(localStorage.getItem('username'));
+  },
+  getQuotes : ()=>{
+    return JSON.parse(localStorage.getItem('quotes'));
+  }
 };
 
 function App() {
   this.todos = [];
   this.profileImg = 'assets/user_profile.jfif';
-  this.init = () => {
-    if (store.getProfileImg() !== null) {
-      this.profileImg = store.getProfileImg();
-    }
-    if (store.getTodoItem()) {
-      this.todos = store.getTodoItem();
-    }
+  this.quotes = '';
+  this.username = '';
 
-    render();
+  //처음 로딩되자마자 하는 것
+  this.init = () => {
+    if(!store.getUserName()){
+       window.location.href = './makeUser.html';
+    }else{
+      this.username = store.getUserName();
+      if (store.getProfileImg() !== null) {
+        this.profileImg = store.getProfileImg();
+      }
+      if (store.getTodoItem()) {
+        this.todos = store.getTodoItem();
+      }
+      if(store.getQuotes()){
+        this.quotes = store.getQuotes();
+      }else{
+        this.quotes = "Welcome!";
+      }
+  
+      render();
+    }
   };
 
   const render = () => {
@@ -45,8 +68,11 @@ function App() {
       })
       .join('');
 
+      $('#username').innerText = this.username;
+      $('#quotes').innerText = this.quotes;
     $('#todo_list').innerHTML = template;
     $('#user_img').src = `${this.profileImg}`;
+    
   };
 
   //추가 함수
@@ -97,7 +123,12 @@ function App() {
     }
   });
 
+  $('#editProfile').addEventListener('click', (e)=>{
+    window.location.href = './editProfile.html';
+  })
+
   //todo check btn
+
   $('#todo_list').addEventListener('click', (e) => {
     const todoId = e.target.closest('li').dataset.todoId;
     if (e.target.classList.contains('todo_check_btn')) {

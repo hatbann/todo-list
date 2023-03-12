@@ -17,6 +17,7 @@
   height: 80px;
   border-radius: 50%;
   margin-right: 15px;
+  cursor: pointer;
 }
 
 #user_profile_content {
@@ -29,6 +30,13 @@
   font-size: 25px;
 }
 
-#user_profile_content > span {
+#quotes{
   font-size: 15px;
+  margin-bottom: 10px;
+}
+
+
+#editProfile{
+  cursor: pointer;
+  font-size: 10px;
 }
