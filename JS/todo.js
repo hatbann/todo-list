@@ -155,19 +155,6 @@ function App() {
     $('.todo_form').classList.add('hidden');
   });
 
-  $('#user_img').addEventListener('click', (e) => {
-    $('#input_profile_img').click();
-    $('#input_profile_img').addEventListener('change', (e) => {
-      let file = e.target.files[0];
-
-      let reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = (e) => {
-        $('#user_img').src = `${e.target.result}`;
-        store.setProfileImg(`${e.target.result}`);
-      };
-    });
-  });
 }
 
 const app = new App();
